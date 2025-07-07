@@ -13,6 +13,7 @@
 
 Game game;           // estado global do jogo
 int listenfd = -1;   // socket do servidor
+static FILE *log_file = NULL; // para gravar o log completo do jogo
 
 ShipType parse_ship_type(const char *s) {
     if (strcmp(s, "SUBMARINO")  == 0) return SUBMARINE;
@@ -57,6 +58,10 @@ void broadcast(const Game *g, const char *msg) {
         if (g->players[i].sockfd != -1) {
             send(g->players[i].sockfd, msg, strlen(msg), 0);
         }
+    }
+     if (log_file) {
+        fprintf(log_file, "%s", msg);
+        fflush(log_file);
     }
 }
 
@@ -205,7 +210,14 @@ void handle_fire(Game *g, Player *p, Coord c) {
                  "=== %s (PLAYER %d) PERDEU! ===\n",
                  loser->name, loser->player_id);
         send_to_player(loser, msg);
-
+        if (log_file) {
+            fprintf(log_file,
+                "RESULTADO: %s (Player %d) WINS; %s (Player %d) LOSES\n\n",
+                winner->name, winner->player_id,
+                loser->name, loser->player_id
+            );
+            fflush(log_file);
+        }
         broadcast(g, "=== JOGO FINALIZADO ===\n");
         g->game_over = true;
         return;
@@ -462,6 +474,10 @@ void *handle_client(void *arg) {
         buf[bytes] = '\0';
         buf[strcspn(buf, "\r\n")] = '\0';
         if (strlen(buf) > 0) {
+            if (log_file) {
+                fprintf(log_file, "PLAYER %d -> %s\n", p->player_id, buf);
+                fflush(log_file);
+            }
             process_command(&game, p, buf);
         }
     }
@@ -504,6 +520,14 @@ int main() {
     printf("[SERVER] Servidor Batalha Naval iniciado na porta %d\n", SERVER_PORT);
     printf("[SERVER] Aguardando jogadores...\n");
 
+    log_file = fopen("game_log.txt", "w");
+    if (!log_file) {
+        perror("fopen");
+        exit(1);
+    }
+    fprintf(log_file, "=== NOVO JOGO INICIADO ===\n\n");
+    fflush(log_file);
+
     // aceita exatamente MAX_CLIENTS jogadores
     while (game.count < MAX_CLIENTS) {
         int conn = accept(listenfd, NULL, NULL);
@@ -536,6 +560,8 @@ int main() {
     }
 
     close(listenfd);
+    fprintf(log_file, "\n=== JOGO FINALIZADO ===\n");
+    fclose(log_file);
     printf("[SERVER] Servidor finalizado.\n");
     return 0;
 }

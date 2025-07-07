@@ -1,0 +1,88 @@
+=== NOVO JOGO INICIADO ===
+
+PLAYER 2 -> JOIN Yago
+PLAYER 1 -> JOIN Daniel
+
+=== AMBOS JOGADORES CONECTADOS ===
+=== FASE DE POSICIONAMENTO INICIADA ===
+*** POSICIONE SEUS NAVIOS: POS <tipo> <x> <y> <H/V> ***
+PLAYER 1 -> POS DESTROYER 1 1 H
+PLAYER 1 -> POS FRAGATA 2 1 H
+PLAYER 1 -> POS FRAGATA 3 1 H
+PLAYER 1 -> POS SUBMARINO 2 3 H
+PLAYER 1 -> READY
+*** PLAYER 1 (Daniel) ESTÁ PRONTO! ***
+PLAYER 2 -> POS DESTROYER 8 6 H
+PLAYER 2 -> POS FRAGATA 7 6 H
+PLAYER 2 -> POS FRAGATA 6 6 H
+PLAYER 2 -> POS SUBMARINO 7 8 H
+PLAYER 2 -> READY
+*** PLAYER 2 (Yago) ESTÁ PRONTO! ***
+
+=== AMBOS JOGADORES PRONTOS ===
+=== INICIANDO BATALHA NAVAL ===
+
+--- TURNO DO PLAYER 1 (Daniel) ---
+PLAYER 1 -> FIRE 6 6
+=== PLAYER 1 (Daniel) ATACOU 6 6: HIT ===
+
+--- TURNO DO PLAYER 2 (Yago) ---
+PLAYER 2 -> FIRE 1 1
+=== PLAYER 2 (Yago) ATACOU 1 1: HIT ===
+
+--- TURNO DO PLAYER 1 (Daniel) ---
+PLAYER 1 -> FIRE 6 7
+=== PLAYER 1 (Daniel) ATACOU 6 7: SUNK ===
+
+--- TURNO DO PLAYER 2 (Yago) ---
+PLAYER 2 -> FIRE 1 2
+=== PLAYER 2 (Yago) ATACOU 1 2: HIT ===
+
+--- TURNO DO PLAYER 1 (Daniel) ---
+PLAYER 1 -> FIRE 7 6
+=== PLAYER 1 (Daniel) ATACOU 7 6: HIT ===
+
+--- TURNO DO PLAYER 2 (Yago) ---
+PLAYER 2 -> FIRE 1 3
+=== PLAYER 2 (Yago) ATACOU 1 3: SUNK ===
+
+--- TURNO DO PLAYER 1 (Daniel) ---
+PLAYER 1 -> FIRE 7 7
+=== PLAYER 1 (Daniel) ATACOU 7 7: SUNK ===
+
+--- TURNO DO PLAYER 2 (Yago) ---
+PLAYER 2 -> FIRE 2 1
+=== PLAYER 2 (Yago) ATACOU 2 1: HIT ===
+
+--- TURNO DO PLAYER 1 (Daniel) ---
+PLAYER 1 -> FIRE 7 8
+=== PLAYER 1 (Daniel) ATACOU 7 8: SUNK ===
+
+--- TURNO DO PLAYER 2 (Yago) ---
+PLAYER 2 -> FIRE 2 2
+=== PLAYER 2 (Yago) ATACOU 2 2: SUNK ===
+
+--- TURNO DO PLAYER 1 (Daniel) ---
+PLAYER 1 -> FIRE 8 6
+=== PLAYER 1 (Daniel) ATACOU 8 6: HIT ===
+
+--- TURNO DO PLAYER 2 (Yago) ---
+PLAYER 2 -> FIRE 2 3
+=== PLAYER 2 (Yago) ATACOU 2 3: SUNK ===
+
+--- TURNO DO PLAYER 1 (Daniel) ---
+PLAYER 1 -> FIRE 8 7
+=== PLAYER 1 (Daniel) ATACOU 8 7: HIT ===
+
+--- TURNO DO PLAYER 2 (Yago) ---
+PLAYER 2 -> FIRE 3 1
+=== PLAYER 2 (Yago) ATACOU 3 1: HIT ===
+
+--- TURNO DO PLAYER 1 (Daniel) ---
+PLAYER 1 -> FIRE 8 8
+=== PLAYER 1 (Daniel) ATACOU 8 8: SUNK ===
+RESULTADO: Daniel (Player 1) WINS; Yago (Player 2) LOSES
+
+=== JOGO FINALIZADO ===
+
+=== JOGO FINALIZADO ===
