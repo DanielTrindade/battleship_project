@@ -219,6 +219,9 @@ void handle_fire(Game *g, Player *p, Coord c) {
             fflush(log_file);
         }
         broadcast(g, "=== JOGO FINALIZADO ===\n");
+        for (int i = 0; i < 2; i++) {
+            send_to_player(&g->players[i], "END\n");
+        }
         g->game_over = true;
         return;
     }

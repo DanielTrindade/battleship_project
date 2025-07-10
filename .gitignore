@@ -1,2 +1,8 @@
 client/battleclient
 server/battleserver
+tests/client1_commands.txt
+tests/client2_commands.txt
+tests/client1.log
+tests/client2.log
+tests/server.log
+game_log.txt

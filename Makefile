@@ -11,3 +11,6 @@ battleclient: client/battleclient.c battleship/battleship.h
 
 clean:
 	rm -f server/battleserver client/battleclient
+test: all
+	   @echo "=== rodando suíte de testes automatizada ==="
+	   @tests/test.sh
